@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%extends 'library/home.html'%}
+{%block child_block%}
+    <div align="center">
+        <table class="table">
+            <thead>
+                <th>Book Name's</th>
+                <th>Borrowers Name</th>
+                <th>For Number of Days</th>
+                <th>Date of Borrowing</th>
+                <th>Renew</th>
+                <th>Delete</th>
+            </thead>
+            {%for data in trans%}
+            <tr>
+                <td>{{data.books}}</td>
+                <td>{{data.user_name}}</td>
+                <td>{{data.number_of_days}}</td>
+                <td>{{data.date}}</td>
+                <td><button><a href="/update/{{data.id}}">Renew</a></button></td>
+                <td><button><a href="/delete/{{data.id}}">Delete</a></button></td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+{%endblock%}

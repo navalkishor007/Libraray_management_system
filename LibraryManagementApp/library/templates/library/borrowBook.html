@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{%extends 'library/home.html'%}
+{%block child_block%}
+    <div align="center">
+       {{form.as_p}}
+        {%csrf_token%}
+        <button type="submit">borrow</button>
+    </div>
+{%endblock%}
